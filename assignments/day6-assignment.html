@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: tomato;
+      }
+      .square {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+        height: 230px;
+        background-color: wheat;
+        border: 2px solid black;
+      }
+      .square__block {
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        background-color: teal;
+      }
+      .square__block--long {
+        width: 190px;
+        height: 50px;
+        border-style: dashed;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square">
+      <div class="square__block"></div>
+      <div class="square__block square__block--long"></div>
+      <div class="square__block"></div>
+    </div>
+  </body>
+</html>
