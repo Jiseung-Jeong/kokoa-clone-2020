@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #6bbcbe;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .rotate {
+        display: flex;
+        margin: 20% 0;
+        animation: rotation 1s ease-in-out infinite;
+      }
+      .rotate__dot {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%;
+        margin: 0 10px;
+      }
+      @keyframes rotation {
+        from {
+          transform: rotateZ(0);
+        }
+
+        50%,
+        to {
+          transform: rotateZ(180deg);
+        }
+      }
+      .wave {
+        display: flex;
+      }
+      .wave__component {
+        width: 10px;
+        height: 50px;
+        margin: 0 3px;
+        background-color: white;
+        animation: long 1s ease-in-out infinite;
+      }
+      .wave__component:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .wave__component:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .wave__component:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .wave__component:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      @keyframes long {
+        from {
+        }
+        25% {
+          transform: scaley(200%);
+        }
+        50%,
+        to {
+          transform: scaleY(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rotate">
+      <div class="rotate__dot"></div>
+      <div class="rotate__dot"></div>
+      <div class="rotate__dot"></div>
+    </div>
+    <div class="wave">
+      <div class="wave__component"></div>
+      <div class="wave__component"></div>
+      <div class="wave__component"></div>
+      <div class="wave__component"></div>
+      <div class="wave__component"></div>
+    </div>
+  </body>
+</html>
