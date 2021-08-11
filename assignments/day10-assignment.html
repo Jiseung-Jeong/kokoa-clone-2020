@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        border: 10px solid #00c6ad;
+        height: 250vh;
+        padding: 100px 50px;
+      }
+      .playlist i {
+        margin-right: 33%;
+      }
+      .playlist h1 {
+        text-align: center;
+        font-size: 50px;
+      }
+      .playlist,
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .title__image i {
+        color: white;
+      }
+      .title h1 {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 75px;
+        text-align: start;
+        margin: 0;
+      }
+      .title h3 {
+        font-size: 30px;
+        margin: 0;
+      }
+      .title__image {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        background-color: #ffbd11;
+        border-radius: 15%;
+        border: 4px solid black;
+      }
+      .btn {
+        display: flex;
+        margin-bottom: 50px;
+      }
+      .btn__play {
+        width: 90%;
+        height: 100px;
+        border: 4px solid black;
+        border-bottom: 8px solid black;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .btn__heart {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 4px solid black;
+        border-bottom: 8px solid black;
+      }
+      .btn__plus {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 4px solid black;
+        border-bottom: 8px solid black;
+      }
+      .btn__box {
+        display: flex;
+        justify-content: center;
+      }
+      .btn__box:first-child {
+        width: 50%;
+        justify-content: flex-start;
+      }
+      .btn__box:nth-child(2) {
+        width: 25%;
+        justify-content: flex-end;
+      }
+      .btn__box:last-child {
+        width: 25%;
+        justify-content: flex-end;
+      }
+      .color__com {
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+      }
+      .color__image {
+        width: 100px;
+        height: 100px;
+        border: 4px solid black;
+        border-radius: 20%;
+        margin-right: 30px;
+      }
+      .color__com:first-child .color__image {
+        background-color: #f85a2a;
+      }
+      .color__com:nth-child(2) .color__image {
+        background-color: #ff89bb;
+      }
+      .color__com:nth-child(3) .color__image {
+        background-color: #1947e5;
+      }
+      .color__com:nth-child(4) .color__image {
+        background-color: #00c6ad;
+      }
+      span {
+        display: block;
+      }
+      .color__title {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .color__subtitle {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="playlist">
+      <i class="fas fa-times fa-4x"></i>
+      <h1>Playlist</h1>
+    </div>
+    <div class="title">
+      <div class="title__image">
+        <i class="far fa-image fa-5x"></i>
+      </div>
+      <div class="title__text">
+        <h1>Random Love</h1>
+        <h3>by Divay Kapoor</h3>
+      </div>
+    </div>
+    <div class="btn">
+      <div class="btn__box">
+        <div class="btn__play">▷ Play</div>
+      </div>
+      <div class="btn__box">
+        <div class="btn__heart"><i class="far fa-heart fa-3x"></i></div>
+      </div>
+      <div class="btn__box">
+        <div class="btn__plus"><i class="fas fa-plus fa-3x"></i></div>
+      </div>
+    </div>
+    <div class="color">
+      <div class="color__com">
+        <div class="color__image"></div>
+        <div class="color__text">
+          <span class="color__title">Matargasti</span>
+          <span class="color__subtitle">Mohit Chauhan</span>
+        </div>
+      </div>
+      <div class="color__com">
+        <div class="color__image"></div>
+        <div class="color__text">
+          <span class="color__title">Attitude</span>
+          <span class="color__subtitle">Lewis Ofman · Attitude</span>
+        </div>
+      </div>
+      <div class="color__com">
+        <div class="color__image"></div>
+        <div class="color__text">
+          <span class="color__title">Try Everything</span>
+          <span class="color__subtitle">Shakira · Zootopia</span>
+        </div>
+      </div>
+      <div class="color__com">
+        <div class="color__image"></div>
+        <div class="color__text">
+          <span class="color__title">Sunflower</span>
+          <span class="color__subtitle">Joseph Vincent · Sunflower</span>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/0e82510173.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
