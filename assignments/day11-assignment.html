@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        padding: 20px;
+      }
+      header {
+        background-color: #ffce33;
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 30px;
+      }
+      header h1 {
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .search__box {
+        position: absolute;
+        top: 85px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      .search input {
+        box-sizing: border-box;
+        border: none;
+        border-radius: 20px;
+        padding: 15px 30px;
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.1);
+        width: 90vw;
+      }
+      .search input::placeholder {
+        color: rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+      }
+      .search i {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.1);
+      }
+      .book-of-day__info {
+        display: flex;
+        justify-content: space-between;
+      }
+      .book-of-day__info-column:first-child {
+        height: 50%;
+        box-sizing: border-box;
+      }
+      .title {
+        font-size: 5.5vw;
+        font-weight: 600;
+      }
+      .book-of-day img {
+        width: 40%;
+        height: auto;
+        border-radius: 10px;
+        margin-right: 5vw;
+      }
+      .book-of-day__text {
+        width: 60%;
+      }
+      .book-of-day__text h1,
+      .book-of-day__text h3 {
+        font-size: 5vw;
+        margin: 0;
+      }
+      .book-of-day__text h3 {
+        font-size: 4vw;
+        color: rgba(0, 0, 0, 0.1);
+        margin-bottom: 5vw;
+      }
+      .book-of-day__stars i {
+        font-size: 3vw;
+      }
+
+      .stars i {
+        color: #ffce33;
+      }
+      .stars i:last-child {
+        color: rgba(0, 0, 0, 0.1);
+      }
+      .book-of-day__btns-column:first-child {
+        display: flex;
+        margin-bottom: 10%;
+      }
+      .book-of-day__btns-column:last-child {
+        display: flex;
+        align-items: center;
+      }
+      .book-of-day__btn {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.9);
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 3.5vw;
+        padding: 2vw 3vw;
+        margin-right: 10px;
+      }
+      .book-of-day__tag i {
+        background-color: #ffce33;
+        padding: 3vw;
+        border-radius: 50%;
+        font-size: 4vw;
+        margin-right: 10vw;
+      }
+      .book-of-day__book-now {
+        font-size: 3vw;
+        background-color: black;
+        color: white;
+        padding: 3vw 6vw;
+        border-radius: 5px;
+      }
+      .cover img {
+        width: 100%;
+        height: 35vw;
+        border-radius: 8px;
+        margin-bottom: 2vw;
+      }
+      .cover__stars {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .cover__lists {
+        display: flex;
+        position: relative;
+        overflow-x: hidden;
+        height: 40vw;
+      }
+      .cover__list {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 25%;
+      }
+      .cover__list:nth-child(2) {
+        left: 30%;
+      }
+      .cover__list:nth-child(3) {
+        left: 60%;
+      }
+      .cover__list:nth-child(4) {
+        left: 90%;
+      }
+      .cover__stars i {
+        font-size: 3vw;
+      }
+      .informations {
+        margin-bottom: 10vw;
+      }
+      .informations__info {
+        display: flex;
+        align-items: center;
+      }
+      .informations__info img {
+        width: 30vw;
+        height: 40vw;
+        border-radius: 10px;
+        margin-right: 5vw;
+      }
+      .informations__text h1 {
+        margin-bottom: 3vw;
+        font-size: 5vw;
+        font-weight: 600;
+        margin: 0;
+      }
+      .informations__text h3 {
+        margin: 0;
+        font-size: 4vw;
+        color: rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <i class="fas fa-bars fa-lg"></i>
+      <h1>library</h1>
+      <i class="fas fa-shopping-bag fa-lg"></i>
+    </header>
+    <div class="search">
+      <div class="search__box">
+        <input type="text" placeholder="Search books..." />
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <main>
+      <div class="book-of-day">
+        <h1 class="title">Book of the day</h1>
+        <div class="book-of-day__info">
+          <img src="https://m.media-amazon.com/images/I/512eZ2k0z0L.jpg" />
+          <div class="book-of-day__text">
+            <div class="book-of-day__info-column">
+              <h1>No fixed abobe</h1>
+              <h3>Journey Through</h3>
+              <div class="book-of-day__stars stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="book-of-day__info-column">
+              <div class="book-of-day__btns-column">
+                <div class="book-of-day__btn">Journey</div>
+                <div class="book-of-day__btn">Biography</div>
+              </div>
+              <div class="book-of-day__btns-column">
+                <div class="book-of-day__tag">
+                  <i class="fas fa-tag"></i>
+                </div>
+                <div class="book-of-day__book-now">Book Now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover">
+        <h1 class="title">Top Adventures</h1>
+        <div class="cover__lists">
+          <div class="cover__list">
+            <img
+              src="http://image.yes24.com/momo/TopCate2343/MidCate006/234259264.jpg"
+            />
+            <div class="cover__stars stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="cover__list">
+            <img
+              src="https://embed.cdn.pais.scholastic.com/v1/channels/tso/products/identifiers/isbn/9780439574242/primary/renditions/700?useMissingImage=true"
+            />
+            <div class="cover__stars stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="cover__list">
+            <img
+              src="https://i.pinimg.com/564x/56/5b/f0/565bf0bda8e444c82f76d34259ca6d96.jpg"
+            />
+            <div class="cover__stars stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="cover__list">
+            <img
+              src="https://mlzvdi6s0ivc.i.optimole.com/vjU2gQQ-V5_EuuWW/w:265/h:373/q:75/https://kristinmetho.de/wp-content/uploads/2020/08/parafiction_new.jpg"
+            />
+            <div class="cover__stars stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="informations">
+        <h1 class="title">Popular author</h1>
+        <div class="informations__info">
+          <img
+            src="https://www.meme-arsenal.com/memes/cfcb96b565f97f17b91f0b2fc1b16134.jpg"
+          />
+
+          <div class="informations__text">
+            <h1 class="informations__name">George Raymond Richard Martin</h1>
+            <h3 class="informations__contents">
+              Modern American science fiction writer, screenwriter, producer and
+              editor, winner of many literary awards.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/0e82510173.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
