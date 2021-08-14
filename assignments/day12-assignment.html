@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Nunito", sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgba(0, 0, 0, 0.05);
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+      }
+      .left {
+        width: 30vw;
+        height: 98vh;
+        background-color: white;
+        padding-top: 1vw;
+        border-radius: 3vw;
+      }
+      .right {
+        width: 30vw;
+        height: 98vh;
+        background-color: white;
+        padding-top: 1vw;
+        border-radius: 3vw;
+      }
+
+      .top-bar {
+        margin: 2vw 1.5vw;
+        display: flex;
+        justify-content: space-between;
+      }
+      .now-musician {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2vw;
+      }
+      .now-musician img {
+        width: 7vw;
+        border-radius: 50%;
+        filter: brightness(140%);
+        box-shadow: 0px 15px 20px 0px rgba(255, 132, 74, 0.5);
+        margin: 0.5vw;
+        margin-bottom: 2vw;
+      }
+      .now-musician h1 {
+        font-size: 2vw;
+        font-weight: 800;
+        margin: 0;
+      }
+      .now-musician h3 {
+        font-size: 1.2vw;
+        font-weight: 800;
+        color: rgba(0, 0, 0, 0.4);
+        margin-top: 0.5vw;
+      }
+      .btns {
+        margin-top: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2vw;
+      }
+      .btns__shuffle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        font-size: 1.2vw;
+        font-weight: 400;
+        color: white;
+        opacity: 0.9;
+        width: 9vw;
+        height: 3vw;
+        border-radius: 1.5vw;
+        margin-right: 0.5vw;
+      }
+      .btns__heart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        font-size: 1.2vw;
+        font-weight: 400;
+        color: black;
+        opacity: 0.9;
+        width: 9vw;
+        height: 3vw;
+        border-radius: 1.5vw;
+      }
+      .btns__heart i {
+        margin-right: 0.5vw;
+      }
+      .music-list {
+        margin: 0 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .music {
+        box-sizing: border-box;
+        border-radius: 1vw;
+        width: 28vw;
+        height: 6vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+      .music:nth-child(2) {
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+      }
+      .music:nth-child(2) img {
+        filter: brightness(70%);
+      }
+      .music__info {
+        display: flex;
+      }
+      .music img {
+        width: 3.5vw;
+        height: 3.5vw;
+        border-radius: 0.8vw;
+        margin: 0 2vw;
+      }
+      .music i {
+        margin-right: 1vw;
+        color: rgba(0, 0, 0, 0.3);
+      }
+      .music__column {
+        margin-right: 4vw;
+      }
+      .music__musician {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 1.2vw;
+        font-weight: 800;
+        margin: 0;
+        margin-bottom: 0.3vw;
+      }
+      .music__name {
+        margin: 0;
+        font-size: 1.4vw;
+        font-weight: 800;
+      }
+      .music__play {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        top: 2vw;
+        left: 2.9vw;
+      }
+      .music__play-box {
+        border-radius: 0.1vw;
+        margin-right: 0.2vw;
+        background-color: white;
+        width: 0.45vw;
+        height: 1.5vw;
+      }
+      .music__play-box:first-child {
+        height: 1vw;
+      }
+      .music__play-box:last-child {
+        height: 1.2vw;
+      }
+      .control-box {
+        background-color: black;
+        position: absolute;
+        width: 27vw;
+        height: 6vw;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 3vw;
+        left: 11.5vw;
+      }
+      .control-box__text {
+        margin-left: 2vw;
+      }
+      .control-box__imo {
+        margin-right: 1vw;
+      }
+      .control-box__musician {
+        margin: 0;
+        font-size: 1.2vw;
+        color: #b2b2b2;
+      }
+      .control-box__name {
+        margin: 0;
+        font-size: 1.4vw;
+      }
+      .control-box__imo i {
+        margin-right: 1vw;
+      }
+      .right .top-bar {
+        margin-bottom: 5vw;
+      }
+      .now-music {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2vw;
+      }
+      .now-music img {
+        width: 20vw;
+        border-radius: 2vw;
+        opacity: 0.9;
+        box-shadow: 0px 15px 20px 0px rgba(255, 132, 74, 0.5);
+        margin-bottom: 5vw;
+      }
+      .now-music__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3vw;
+      }
+      .now-music__name {
+        font-size: 2.2vw;
+        font-weight: 800;
+        margin: 0;
+        margin-bottom: 0.8vw;
+      }
+      .now-music__musician {
+        font-size: 1.2vw;
+        font-weight: 800;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.3);
+      }
+      .music-bar {
+        width: 26vw;
+        margin-bottom: 5vw;
+      }
+      .music-bar__time {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2vw;
+        color: rgba(0, 0, 0, 0.2);
+        font-weight: 800;
+        margin-bottom: 0.7vw;
+      }
+      .music-bar__back-bar {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 0.3vw;
+        position: relative;
+      }
+      .music-bar__front-bar {
+        position: absolute;
+        width: 60%;
+        height: 0.3vw;
+        background-color: black;
+      }
+      .music-bar__now-dot {
+        position: absolute;
+        left: 15vw;
+        top: -0.24vw;
+        background-color: black;
+        width: 0.7vw;
+        height: 0.7vw;
+        border-radius: 50%;
+      }
+      .now-btns {
+        margin: 0 0.5vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .now-btns i:first-child:not(.now-btns__play i),
+      .now-btns i:last-child:not(.now-btns__play i) {
+        color: rgba(0, 0, 0, 0.2);
+      }
+      .now-btns__play {
+        background-color: black;
+        width: 5.5vw;
+        height: 5.5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      .now-btns__play i {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="top-bar">
+        <i class="fas fa-arrow-left fa-xs"></i>
+        <i class="fas fa-search fa-xs"></i>
+      </div>
+      <div class="now-musician">
+        <img
+          src="https://cdns-images.dzcdn.net/images/artist/84ff06f377b881b355e0959f750f5a1b/500x500.jpg"
+        />
+        <h1>Tyler, The Creator</h1>
+        <h3>Rap, Hip-Hop</h3>
+        <div class="btns">
+          <div class="btns__shuffle">Shuffle</div>
+          <div class="btns__heart">
+            <i class="fas fa-heart"></i>
+            212 971
+          </div>
+        </div>
+      </div>
+      <div class="music-list">
+        <div class="music">
+          <div class="music__info">
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57"
+            />
+            <div class="music__column">
+              <h3 class="music__musician">Tyler, the Creator</h3>
+              <h3 class="music__name">EARFQUAKE</h3>
+            </div>
+          </div>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="music">
+          <div class="music__info">
+            <img
+              src="https://images.genius.com/657250fbf21b4b4814e4bbab1b2000b5.1000x1000x1.jpg"
+            />
+            <div class="music__play">
+              <div class="music__play-box"></div>
+              <div class="music__play-box"></div>
+              <div class="music__play-box"></div>
+            </div>
+            <div class="music__column">
+              <h3 class="music__musician">Tyler, the Creator</h3>
+              <h3 class="music__name">NOVEMBER</h3>
+            </div>
+          </div>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="music">
+          <div class="music__info">
+            <img
+              src="https://images.genius.com/657250fbf21b4b4814e4bbab1b2000b5.1000x1000x1.jpg"
+            />
+            <div class="music__column">
+              <h3 class="music__musician">Tyler, the Creator</h3>
+              <h3 class="music__name">911</h3>
+            </div>
+          </div>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="music">
+          <div class="music__info">
+            <img
+              src="https://img.discogs.com/SOOa2GrdGecPjQ2NKU7wlvMeBcw=/fit-in/405x405/filters:strip_icc():format(webp):mode_rgb():quality(90)/discogs-images/R-5617601-1398102815-6436.jpeg.jpg"
+            />
+            <div class="music__column">
+              <h3 class="music__musician">Tyler, the Creator</h3>
+              <h3 class="music__name">WOLF</h3>
+            </div>
+          </div>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <div class="control-box">
+        <div class="control-box__text">
+          <h3 class="control-box__musician">Tyler, The Creator</h3>
+          <h3 class="control-box__name">NOVEMBER</h3>
+        </div>
+        <div class="control-box__imo">
+          <i class="fas fa-step-backward"></i>
+          <i class="fas fa-pause"></i>
+          <i class="fas fa-step-forward"></i>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="top-bar">
+        <i class="fas fa-arrow-left fa-xs"></i>
+        <i class="fas fa-ellipsis-v fa-xs"></i>
+      </div>
+
+      <div class="now-music">
+        <img
+          src="https://images.genius.com/657250fbf21b4b4814e4bbab1b2000b5.1000x1000x1.jpg"
+        />
+        <div class="now-music__info">
+          <h3 class="now-music__name">November</h3>
+          <h3 class="now-music__musician">Tyler, The Creator</h3>
+        </div>
+        <div class="music-bar">
+          <div class="music-bar__time">
+            <span class="music-bar__present-time">1:56</span>
+            <span class="music-bar__total-time">2:21</span>
+          </div>
+          <div class="music-bar__back-bar">
+            <div class="music-bar__front-bar"></div>
+            <div class="music-bar__now-dot"></div>
+          </div>
+        </div>
+        <div class="now-btns">
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-step-backward"></i>
+          <div class="now-btns__play">
+            <i class="fas fa-play"></i>
+          </div>
+          <i class="fas fa-step-forward"></i>
+          <i class="fas fa-random"></i>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/0e82510173.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
